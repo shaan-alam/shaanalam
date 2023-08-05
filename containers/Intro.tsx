@@ -4,7 +4,7 @@ const Intro = () => {
   return (
     <section
       id="stick"
-      className="h-screen flex items-center justify-start w-[90%] mx-auto bg-zinc-900 px-12"
+      className="h-auto p-8 md:px-12 md:h-screen flex items-center justify-start w-[90%] mx-auto bg-zinc-900 px-12"
     >
       <div className="relative text-white md:w-[70%] w-full leading-7 md:leading-[3rem] font-primary md:text-4xl">
         <motion.div

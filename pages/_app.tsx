@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "@/styles/globals.css";
+import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";

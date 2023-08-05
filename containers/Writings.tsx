@@ -1,9 +1,9 @@
 import AnimatedImage from "@/components/AnimatedImage";
-import Layout from "@/components/Layout";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
+import { Blog } from "@/@types/types";
 
-const Writings = () => {
+const Writings: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
   return (
     <section className="w-[90%] mx-auto h-auto mt-24">
       <h1
@@ -21,45 +21,24 @@ const Writings = () => {
         Check out some of my most popular blogs...
       </p>
       <div className="blogs md:grid grid-cols-3 gap-12 my-16">
-        <div className="blog my-8 md:my-0" data-scroll data-scroll-speed="1">
-          <AnimatedImage
-            src="https://res.cloudinary.com/practicaldev/image/fetch/s--PUXvTLmv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tbk7jtnv6px9eq28fvk3.png"
-            className="mb-4"
-          />
-          <h1 className="text-zinc-900 font-bold my-4 hover:underline text-2xl">
-            Build a Blogging Site using NextJS and MDX
-          </h1>
-          <p className="text-gray-500 leading-7 text-[0.75em]">
-            Do you want start your blog where you educate others, or may be you
-            want a blog as a repository of all the information you’ve gathered
-          </p>
-        </div>
-        <div className="blog my-8 md:my-0" data-scroll data-scroll-speed="2">
-          <AnimatedImage
-            src="https://res.cloudinary.com/practicaldev/image/fetch/s--PUXvTLmv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tbk7jtnv6px9eq28fvk3.png"
-            className="mb-4"
-          />
-          <h1 className="text-zinc-900 font-bold my-4 hover:underline text-2xl">
-            Build a Blogging Site using NextJS and MDX
-          </h1>
-          <p className="text-gray-500 leading-7 text-[0.75em]">
-            Do you want start your blog where you educate others, or may be you
-            want a blog as a repository of all the information you’ve gathered
-          </p>
-        </div>
-        <div className="blog my-8 md:my-0" data-scroll data-scroll-speed="3">
-          <AnimatedImage
-            src="https://res.cloudinary.com/practicaldev/image/fetch/s--PUXvTLmv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tbk7jtnv6px9eq28fvk3.png"
-            className="mb-4"
-          />
-          <h1 className="text-zinc-900 font-bold my-4 hover:underline text-2xl">
-            Build a Blogging Site using NextJS and MDX
-          </h1>
-          <p className="text-gray-500 leading-7 text-[0.75em]">
-            Do you want start your blog where you educate others, or may be you
-            want a blog as a repository of all the information you’ve gathered
-          </p>
-        </div>
+        {blogs &&
+          blogs.map((blog) => (
+            <div
+              className="blog my-8 md:my-0"
+              data-scroll
+              data-scroll-speed="2"
+            >
+              <AnimatedImage src={blog.cover_image} className="mb-4" />
+              <Link href={`/blogs/${blog.id}`}>
+                <h1 className="text-zinc-900 font-bold my-4 hover:underline text-2xl">
+                  {blog.title}
+                </h1>
+              </Link>
+              <p className="text-gray-500 leading-7 text-[0.75em]">
+                {blog.description}
+              </p>
+            </div>
+          ))}
       </div>
       <Link
         href="/blogs"

@@ -2,12 +2,14 @@ import Layout from "@/components/Layout";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Intro from "@/containers/Intro";
-import { MoveRight, MoveUp } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Writings from "@/containers/Writings";
 import Footer from "@/components/Footer";
-import { useEffect } from "react";
 import useScrollPosition from "@/hooks/useScrollPosition";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import axios from "axios";
+import { Blog } from "@/@types/types";
 
 const socialVariants = {
   initial: {
@@ -35,11 +37,11 @@ const socialLinkVariants = {
   },
 };
 
-export default function Home() {
-  const scrollPosition = useScrollPosition();
+export default function Home({
+  blogs,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <Layout>
-      <Navbar />
       <section className="w-[90%] mx-auto pt-28" id="home">
         <h1
           className="text-zinc-800 font-primary text-xl sm:text-4xl md:text-8xl font-bold uppercase"
@@ -110,8 +112,30 @@ export default function Home() {
         </motion.div>
       </section>
       <Intro />
-      <Writings />
-      <Footer />
+      <Writings blogs={blogs} />
     </Layout>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<{
+  blogs: Blog[];
+}> = async () => {
+  const res = await axios.get<Blog[]>(
+    "https://dev.to/api/articles/me/published",
+    {
+      headers: {
+        "api-key": "9d4XM7raYQDcUkZKSeKvVXii",
+      },
+    }
+  );
+
+  const popularBlogs = res.data
+    .sort((a, b) => b.page_views_count - a.page_views_count)
+    .slice(0, 3);
+
+  return {
+    props: {
+      blogs: popularBlogs,
+    },
+  };
+};

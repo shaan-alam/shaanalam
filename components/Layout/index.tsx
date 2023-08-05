@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
@@ -12,7 +14,6 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const containerRef = useRef(null);
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -21,7 +22,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       transition={{ duration: 1, ease: "easeIn" }}
       data-scroll-section
     >
+      <Navbar />
       {children}
+      <Footer />
     </motion.section>
   );
 };
