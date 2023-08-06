@@ -27,6 +27,7 @@ const Writings: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
               className="blog my-8 md:my-0"
               data-scroll
               data-scroll-speed="2"
+              key={blog.id}
             >
               <AnimatedImage src={blog.cover_image} className="mb-4" />
               <Link href={`/blogs/${blog.id}`}>

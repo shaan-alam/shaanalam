@@ -16,7 +16,7 @@ const Blogs: React.FC<
         </h1>
         <div className="blogs sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {blogs.map((blog) => (
-            <Link href={`/blogs/${blog.id}`}>
+            <Link href={`/blogs/${blog.id}`} key={blog.id}>
               <div
                 className="blog my-8 md:my-0"
                 data-scroll
