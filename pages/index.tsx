@@ -57,7 +57,7 @@ export default function Home({
           data-scroll-direction="vertical"
           data-scroll-speed="2"
         >
-          I Design & Code things!
+          I code & deisgn things!
         </h1>
         <div
           className="links flex items-center my-6"

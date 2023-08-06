@@ -9,7 +9,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   const pageKey = pageRouter.asPath;
 
   return (
-    <AnimatePresence initial={true} mode="popLayout" key={router.route}>
+    <AnimatePresence initial={true} mode="wait" key={router.route}>
       <Component key={pageKey} {...pageProps} />
     </AnimatePresence>
   );

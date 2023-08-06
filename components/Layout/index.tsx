@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { motion } from "framer-motion";
 import Navbar from "../Navbar";
@@ -9,14 +8,9 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const containerRef = useRef(null);
-
   return (
-    <LocomotiveScrollProvider
-      options={{ smooth: true }}
-      containerRef={containerRef}
-    >
-      <main ref={containerRef} data-scroll-container>
+    <LocomotiveScrollProvider options={{ smooth: true, multiplier: 3 }}>
+      <main data-scroll-container>
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
