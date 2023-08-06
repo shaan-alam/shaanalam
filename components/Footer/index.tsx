@@ -7,7 +7,7 @@ const Footer = () => {
         <h1 className="mb-6 md:mb-0 text-sm">
           Designed using NextJS, Tailwind and TypeScript
         </h1>
-        <ul className="font-primary font-bold flex items-center">
+        <ul className="list-none font-primary font-bold flex items-center">
           <Link href="/">
             <li className="mr-4 hover:underline transition-all">Home</li>
           </Link>
