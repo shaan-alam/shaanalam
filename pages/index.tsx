@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Intro from "@/containers/Intro";
-import { MoveRight } from "lucide-react";
+// import { MoveRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Writings from "@/containers/Writings";
 import Footer from "@/components/Footer";
@@ -66,11 +66,11 @@ export default function Home({
         >
           <a href="#!" className="flex items-center hover:underline mr-4">
             Download Resume&nbsp;
-            <MoveRight />
+            {/* <MoveRight /> */}
           </a>
           <a href="#!" className="flex items-center hover:underline">
             View Projects&nbsp;
-            <MoveRight />
+            {/* <MoveRight /> */}
           </a>
         </div>
         <motion.div

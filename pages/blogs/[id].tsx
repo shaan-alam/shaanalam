@@ -3,7 +3,6 @@ import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import axios from "axios";
 import Layout from "@/components/Layout";
 import AnimatedImage from "@/components/AnimatedImage";
-import { Clock, Heart, MessageCircle } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import CodeBlock from "@/components/CodeBlock";
@@ -26,15 +25,15 @@ const Blog = ({
           </h1>
           <div className="flex items-center justify-center w-full mt-4 text-sm">
             <div className="text-gray-600 flex items-center mr-3 text-sm">
-              <Heart size={15} />
+              {/* <Heart size={15} /> */}
               &nbsp;{blog.public_reactions_count}
             </div>
             <div className="text-gray-600 flex items-center mr-3 text-sm">
-              <MessageCircle size={15} />
+              {/* <MessageCircle size={15} /> */}
               &nbsp;{blog.comments_count}
             </div>
             <div className="text-gray-600 flex items-center mr-3 text-sm">
-              <Clock size={15} />
+              {/* <Clock size={15} /> */}
               &nbsp;{blog.reading_time_minutes} minutes
             </div>
           </div>

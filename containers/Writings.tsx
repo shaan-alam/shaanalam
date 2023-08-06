@@ -1,5 +1,4 @@
 import AnimatedImage from "@/components/AnimatedImage";
-import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import { Blog } from "@/@types/types";
 
@@ -48,7 +47,7 @@ const Writings: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
         data-scroll-speed="1"
       >
         See All Articles&nbsp;
-        <MoveRight />
+        {/* <MoveRight /> */}
       </Link>
     </section>
   );
