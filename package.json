@@ -19,6 +19,7 @@
     "locomotive-scroll": "^4.1.4",
     "lucide": "^0.263.0",
     "lucide-react": "^0.263.1",
+    "moment": "^2.29.4",
     "next": "13.4.12",
     "postcss": "8.4.27",
     "prism-react-renderer": "^2.0.6",
