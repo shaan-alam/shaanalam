@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +11,16 @@
 
 ::selection {
   @apply bg-zinc-800 text-white;
+}
+
+@font-face {
+  font-family: "Horizon";
+  src: url("../public/Horizon.otf");
+}
+
+@font-face {
+  font-family: "Horizon_Outline";
+  src: url("../public/horizon_outlined.otf");
 }
 
 body {
@@ -120,10 +130,15 @@ html.dark-mode {
     @apply my-6;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
   }
-  
+
   h1 {
     @apply text-xl sm:text-5xl;
   }

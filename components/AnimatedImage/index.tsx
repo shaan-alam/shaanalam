@@ -19,7 +19,7 @@ const AnimatedImage = ({
 
   useEffect(() => {
     if (slideInView) {
-      slideControls.start({ scaleX: 0 });
+      slideControls.start({ scaleX: 0 })
       imageControls.start({ scale: 1 });
     }
   }, [slideInView, slideControls, imageControls]);

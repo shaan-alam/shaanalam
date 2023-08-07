@@ -12,7 +12,8 @@ module.exports = {
         primary: "#FF004D",
       },
       fontFamily: {
-        primary: ['Inter', 'sans-serif'],
+        primary: ['Horizon', 'sans-serif'],
+        outlined: ['Horizon_Outline', 'sans-serif'],
         mono: ['Roboto Mono', 'sans-serif']
       }
     },
