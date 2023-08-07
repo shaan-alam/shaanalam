@@ -61,7 +61,7 @@ const Navbar = () => {
           className="cursor-pointer text-black dark:text-white"
           onClick={() => setNavOpen(true)}
         >
-          <HiMenuAlt4 size={30} />
+          <HiMenuAlt4 size={30} color={theme == "dark" ? "#fff" : "#000"} />
         </span>
       </div>
       <AnimatePresence mode="wait">
