@@ -19,7 +19,7 @@ const AnimatedImage = ({
 
   useEffect(() => {
     if (slideInView) {
-      slideControls.start({ scaleX: 0 })
+      slideControls.start({ scaleX: 0 });
       imageControls.start({ scale: 1 });
     }
   }, [slideInView, slideControls, imageControls]);
@@ -28,7 +28,7 @@ const AnimatedImage = ({
     <div className="relative overflow-hidden">
       <motion.div
         ref={slideRef}
-        className="absolute inset-0 bg-white origin-left z-10"
+        className="absolute inset-0 bg-white dark:bg-black origin-left z-10"
         initial={{ scaleX: 1 }}
         animate={slideControls}
         transition={{ duration: 0.8, ease: "easeIn" }}

@@ -7,14 +7,14 @@ const Writings: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
   return (
     <section className="w-[90%] mx-auto h-auto mt-24">
       <h1
-        className="font-primary text-black text-xl sm:text-4xl md:text-6xl font-bold uppercase"
+        className="font-primary text-black dark:text-white text-xl sm:text-4xl md:text-6xl font-bold uppercase"
         data-scroll
         data-scroll-speed="1"
       >
         Some of my writings
       </h1>
       <p
-        className="text-zinc-800 md:text-xl text-base mt-6 font-secondary"
+        className="text-zinc-800 dark:text-gray-300 md:text-xl text-base mt-6 font-secondary"
         data-scroll
         data-scroll-speed="1"
       >
@@ -31,11 +31,11 @@ const Writings: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
             >
               <AnimatedImage src={blog.cover_image} className="mb-4" />
               <Link href={`/blogs/${blog.id}`}>
-                <h1 className="text-zinc-900 font-bold my-4 hover:underline">
+                <h1 className="text-black dark:text-white font-bold my-4 hover:underline">
                   {blog.title}
                 </h1>
               </Link>
-              <p className="text-gray-500 leading-7 text-[0.75em] font-secondary">
+              <p className="text-gray-500 dark:text-gray-300 leading-7 text-[0.75em] font-secondary">
                 {blog.description}
               </p>
             </div>

@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, useAnimationControls } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const navLinks = [
   { text: "Home", path: "/ " },
@@ -13,6 +15,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
   const router = useRouter();
   const [navOpen, setNavOpen] = useState(false);
 
@@ -43,15 +46,28 @@ const Navbar = () => {
 
   return (
     <nav className="w-full py-8">
-      <div className="container flex justify-end w-[90%] mx-auto">
-        <span className="cursor-pointer" onClick={() => setNavOpen(true)}>
+      <div className="container flex items-center justify-end w-[90%] mx-auto">
+        <span className="text-black dark:text-white font-primary mr-4 text-sm hover:underline cursor-pointer">
+          <DarkModeSwitch
+            className="h-[25px]"
+            checked={theme === "light"}
+            onChange={() => setTheme(theme === "light" ? "dark" : "light")}
+            size={120}
+            moonColor="#000"
+            sunColor="#fff"
+          />
+        </span>
+        <span
+          className="cursor-pointer text-black dark:text-white"
+          onClick={() => setNavOpen(true)}
+        >
           <HiMenuAlt4 size={30} />
         </span>
       </div>
       <AnimatePresence mode="wait">
         {navOpen && (
           <motion.section
-            className="p-12 fixed inset-0 z-[999] h-screen w-full origin-bottom bg-black flex flex-col items-end"
+            className="p-12 fixed inset-0 z-[999] h-screen w-full origin-bottom bg-black dark:bg-white flex flex-col items-end"
             initial={{ scaleY: 0 }}
             animate={navAnimations}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -69,7 +85,7 @@ const Navbar = () => {
                 className="cursor-pointer"
                 onClick={() => setNavOpen(false)}
               >
-                <HiX color="#fff" size={30} />
+                <HiX color={theme === "dark" ? "#000" : "#fff"} size={30} />
               </motion.span>
             </div>
             <div className="menu mt-8">
@@ -82,10 +98,7 @@ const Navbar = () => {
                     navigateToRoute(path);
                   }}
                 >
-                  <h1 className="relative hover:underline overflow-hidden text-white font-primary text-4xl sm:text-8xl font-bold uppercase text-right my-4">
-                    {/* <div className="absolute top-[-1rem] left-[-1rem] z-[9] scale-110 font-outlined">
-                      <h1>{text}</h1>
-                    </div> */}
+                  <h1 className="relative hover:underline overflow-hidden text-white dark:text-black font-primary text-4xl sm:text-8xl font-bold uppercase text-right my-4">
                     <motion.div
                       initial={{ y: "100%" }}
                       animate={navLinkAnimations}
@@ -110,22 +123,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-{
-  /* <div className="container w-[80%] mx-auto flex items-center justify-end">
-<ul className="list-none font-primary font-bold flex items-center">
-  <Link href="/">
-    <li className="mr-4 hover:underline transition-all">Home</li>
-  </Link>
-  <Link href="/projects">
-    <li className="mr-4 hover:underline transition-all">Projects</li>
-  </Link>
-  <Link href="/blogs">
-    <li className="mr-4 hover:underline transition-all">Blogs</li>
-  </Link>
-  <Link href="/about">
-    <li className="mr-4 hover:underline transition-all">About</li>
-  </Link>
-</ul>
-</div> */
-}

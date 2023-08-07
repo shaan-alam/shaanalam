@@ -20,8 +20,13 @@
 }
 
 body {
-  @apply bg-white;
-  background-image: url("../public/bg-lines.svg");
+  @apply bg-white dark:bg-black bg-light-image dark:bg-dark-image;
+}
+
+.nav-link {
+  &:hover .nav-link-outline {
+    @apply block;
+  }
 }
 
 ul {

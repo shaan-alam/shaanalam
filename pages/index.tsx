@@ -1,12 +1,8 @@
 import Layout from "@/components/Layout";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Intro from "@/containers/Intro";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import Navbar from "@/components/Navbar";
 import Writings from "@/containers/Writings";
-import Footer from "@/components/Footer";
-import useScrollPosition from "@/hooks/useScrollPosition";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import axios from "axios";
 import { Blog } from "@/@types/types";
@@ -43,14 +39,14 @@ export default function Home({
   return (
     <Layout>
       <motion.div
-        className="fixed inset-0 h-screen w-full bg-black z-[999] scale-y-1 origin-bottom"
+        className="fixed inset-0 h-screen w-full bg-white dark:bg-black z-[999] scale-y-1 origin-bottom"
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         transition={{ delay: 1, duration: 1, ease: "easeOut" }}
       ></motion.div>
       <section className="w-[90%] mx-auto pt-28 h-screen" id="home">
         <h1
-          className="relative overflow-hidden text-black font-primary text-[2rem] sm:text-4xl md:text-7xl font-bold uppercase"
+          className="relative overflow-hidden text-black dark:text-white font-primary text-xl sm:text-4xl md:text-7xl font-bold uppercase"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"
@@ -64,7 +60,7 @@ export default function Home({
           </motion.div>
         </h1>
         <h1
-          className="relative overflow-hidden text-black font-primary text-[2rem] sm:text-4xl md:text-6xl font-bold uppercase"
+          className="relative overflow-hidden text-black dark:text-white font-primary text-xl sm:text-4xl md:text-7xl font-bold uppercase"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"
@@ -85,7 +81,7 @@ export default function Home({
           <div className="relative overflow-hidden">
             <motion.a
               href="#!"
-              className="flex items-center hover:underline mr-4 font-secondary"
+              className="flex items-center hover:underline mr-4 font-secondary text-black dark:text-white"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ delay: 2.4, duration: 0.8, ease: "easeInOut" }}
@@ -97,7 +93,7 @@ export default function Home({
           <div className="relative overflow-hidden">
             <motion.a
               href="#!"
-              className="flex items-center hover:underline mr-4 font-secondary"
+              className="flex items-center hover:underline mr-4 font-secondary text-black dark:text-white"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ delay: 3, duration: 0.8, ease: "easeInOut" }}
