@@ -12,7 +12,13 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <AnimatePresence initial={true} mode="wait" key={router.route}>
       <ThemeProvider attribute="class" enableSystem>
-        <LocomotiveScrollProvider options={{ smooth: true }}>
+        <LocomotiveScrollProvider
+          options={{
+            smooth: true,
+            smartphone: { smooth: true },
+            tablet: { smooth: true },
+          }}
+        >
           <main data-scroll-container>
             <Component key={pageKey} {...pageProps} />
           </main>
