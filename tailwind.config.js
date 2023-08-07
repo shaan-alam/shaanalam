@@ -12,7 +12,8 @@ module.exports = {
         primary: "#FF004D",
       },
       fontFamily: {
-        primary: ['Inter', 'sans-serif']
+        primary: ['Inter', 'sans-serif'],
+        mono: ['Roboto Mono', 'sans-serif']
       }
     },
   },

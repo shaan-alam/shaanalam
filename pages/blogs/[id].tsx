@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import CodeBlock from "@/components/CodeBlock";
 import Moment from "react-moment";
+import { HiHeart, HiChat, HiClock } from "react-icons/hi";
 
 const Blog = ({
   blog,
@@ -18,22 +19,22 @@ const Blog = ({
           <AnimatedImage
             src={blog.cover_image}
             alt={blog.title}
-            className="h-[400px] object-contain mb-8"
+            className="mb-8"
           />
           <h1 className="text-center text-zinc-900 text-2xl sm:text-4xl font-primary font-bold">
             {blog.title}
           </h1>
           <div className="flex items-center justify-center w-full mt-4 text-sm">
             <div className="text-gray-600 flex items-center mr-3 text-sm">
-              {/* <Heart size={15} /> */}
+              <HiHeart />
               &nbsp;{blog.public_reactions_count}
             </div>
             <div className="text-gray-600 flex items-center mr-3 text-sm">
-              {/* <MessageCircle size={15} /> */}
+              <HiChat />
               &nbsp;{blog.comments_count}
             </div>
             <div className="text-gray-600 flex items-center mr-3 text-sm">
-              {/* <Clock size={15} /> */}
+              <HiClock />
               &nbsp;{blog.reading_time_minutes} minutes
             </div>
           </div>
@@ -45,7 +46,7 @@ const Blog = ({
         </p>
         <div className="blog_content">
           {blog?.body_markdown && (
-             <ReactMarkdown
+            <ReactMarkdown
               children={blog?.body_markdown}
               remarkPlugins={[remarkGfm]}
               components={{

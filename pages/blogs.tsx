@@ -23,11 +23,9 @@ const Blogs: React.FC<
                 data-scroll-speed="2"
               >
                 <AnimatedImage src={blog.cover_image} className="mb-4" />
-                <Link href={`/blogs/${blog.id}`}>
-                  <h1 className="text-zinc-900 font-bold my-4 hover:underline text-2xl">
-                    {blog.title}
-                  </h1>
-                </Link>
+                <h1 className="text-zinc-900 font-bold my-4 hover:underline text-2xl">
+                  {blog.title}
+                </h1>
                 <p className="text-gray-500 leading-7 text-[0.75em]">
                   {blog.description}
                 </p>

@@ -11,7 +11,7 @@ const Navbar = () => {
           <Link href="/projects">
             <li className="mr-4 hover:underline transition-all">Projects</li>
           </Link>
-          <Link href="blogs">
+          <Link href="/blogs">
             <li className="mr-4 hover:underline transition-all">Blogs</li>
           </Link>
           <Link href="/about">

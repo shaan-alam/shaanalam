@@ -37,7 +37,7 @@ const AnimatedImage = ({
         src={src}
         className={classNames("w-full relative z-[5]", className)}
         alt={alt}
-        initial={{ scale: 1.2 }}
+        initial={{ scale: 1.5 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.8, ease: "easeIn" }}
       />

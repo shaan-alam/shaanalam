@@ -1,8 +1,8 @@
-import { useRef } from "react";
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const pageRouter = useRouter();
@@ -10,7 +10,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   return (
     <AnimatePresence initial={true} mode="wait" key={router.route}>
-      <Component key={pageKey} {...pageProps} />
+      <LocomotiveScrollProvider options={{ smooth: true }}>
+        <main data-scroll-container>
+          <Component key={pageKey} {...pageProps} />
+        </main>
+      </LocomotiveScrollProvider>
     </AnimatePresence>
   );
 }

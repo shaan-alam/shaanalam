@@ -4,9 +4,9 @@ const Intro = () => {
   return (
     <section
       id="stick"
-      className="h-auto p-8 md:px-12 md:h-screen flex items-center justify-start w-[90%] mx-auto bg-zinc-900 px-12"
+      className="p-8 md:px-12 h-screen flex items-center justify-start w-[90%] mx-auto bg-zinc-900 px-12"
     >
-      <div className="relative text-white md:w-[70%] w-full leading-7 md:leading-[3rem] font-primary md:text-4xl">
+      <div className="relative text-white md:w-[70%] w-full leading-7 md:leading-[3rem] font-primary md:text-3xl">
         <motion.div
           initial={{ scaleY: 1 }}
           animate={{ scaleY: 0 }}

@@ -18,7 +18,7 @@ const CodeBlock = ({ code, language }: CodeBlockProps) => {
 
   return (
     codeBlock && (
-      <div className="bg-[#011627] p-2 overflow-auto rounded-md my-6">
+      <div className="bg-[#011627] p-2 overflow-auto rounded-md my-6 font-mono">
         <Highlight
           theme={themes.jettwaveDark}
           code={codeBlock as string}
@@ -30,14 +30,14 @@ const CodeBlock = ({ code, language }: CodeBlockProps) => {
                 <div
                   key={i}
                   {...getLineProps({ line })}
-                  style={{ marginBottom: 0, marginTop: 0 }}
+                  style={{ marginBottom: 0, marginTop: 0, fontFamily: 'Roboto Mono' }}
                 >
                   <span className="mr-4 text-sm text-gray-500">{i + 1}</span>
                   {line.map((token, key) => (
                     <span
                       key={key}
                       {...getTokenProps({ token })}
-                      className="no-margin"
+                      className="no-margin font-mono"
                     />
                   ))}
                 </div>

@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Intro from "@/containers/Intro";
-// import { MoveRight } from "lucide-react";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import Navbar from "@/components/Navbar";
 import Writings from "@/containers/Writings";
 import Footer from "@/components/Footer";
@@ -42,38 +42,72 @@ export default function Home({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <Layout>
-      <section className="w-[90%] mx-auto pt-28" id="home">
+      <motion.div
+        className="fixed inset-0 h-screen w-full bg-black z-[999] scale-y-1 origin-bottom"
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: 0 }}
+        transition={{ delay: 1, duration: 1, ease: "easeOut" }}
+      ></motion.div>
+      <section className="w-[90%] mx-auto pt-28 h-screen" id="home">
         <h1
-          className="text-zinc-800 font-primary text-xl sm:text-4xl md:text-8xl font-bold uppercase"
+          className="relative overflow-hidden text-zinc-800 font-primary text-[2rem] sm:text-4xl md:text-8xl font-bold uppercase"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"
         >
-          Hi, I am Shaan Alam
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ delay: 1.5, duration: 0.8, ease: "easeInOut" }}
+          >
+            Hi, I am Shaan Alam
+          </motion.div>
         </h1>
         <h1
-          className="text-zinc-800 font-primary text-xl sm:text-4xl md:text-8xl font-bold uppercase"
+          className="relative overflow-hidden text-zinc-800 font-primary text-[2rem] sm:text-4xl md:text-8xl font-bold uppercase"
           data-scroll
           data-scroll-direction="vertical"
-          data-scroll-speed="2"
+          data-scroll-speed="3"
         >
-          I code & deisgn things!
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ delay: 2, duration: 0.8, ease: "easeInOut" }}
+          >
+            I Code & Design Things!
+          </motion.div>
         </h1>
         <div
           className="links flex items-center my-6"
           data-scroll
           data-scroll-speed="1"
         >
-          <a href="#!" className="flex items-center hover:underline mr-4">
-            Download Resume&nbsp;
-            {/* <MoveRight /> */}
-          </a>
-          <a href="#!" className="flex items-center hover:underline">
-            View Projects&nbsp;
-            {/* <MoveRight /> */}
-          </a>
+          <div className="relative overflow-hidden">
+            <motion.a
+              href="#!"
+              className="flex items-center hover:underline mr-4"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ delay: 2.4, duration: 0.8, ease: "easeInOut" }}
+            >
+              Download Resume&nbsp;
+              <HiOutlineArrowNarrowRight />
+            </motion.a>
+          </div>
+          <div className="relative overflow-hidden">
+            <motion.a
+              href="#!"
+              className="flex items-center hover:underline mr-4"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ delay: 3, duration: 0.8, ease: "easeInOut" }}
+            >
+              View Projects&nbsp;
+              <HiOutlineArrowNarrowRight />
+            </motion.a>
+          </div>
         </div>
-        <motion.div
+        {/* <motion.div
           variants={socialVariants}
           initial="initial"
           animate="animate"
@@ -109,7 +143,7 @@ export default function Home({
               alt="Twitter Logo"
             />
           </motion.a>
-        </motion.div>
+        </motion.div> */}
       </section>
       <Intro />
       <Writings blogs={blogs} />
