@@ -50,7 +50,7 @@ export default function Home({
       ></motion.div>
       <section className="w-[90%] mx-auto pt-28 h-screen" id="home">
         <h1
-          className="relative overflow-hidden text-zinc-800 font-primary text-[2rem] sm:text-4xl md:text-8xl font-bold uppercase"
+          className="relative overflow-hidden text-black font-primary text-[2rem] sm:text-4xl md:text-7xl font-bold uppercase"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"
@@ -64,7 +64,7 @@ export default function Home({
           </motion.div>
         </h1>
         <h1
-          className="relative overflow-hidden text-zinc-800 font-primary text-[2rem] sm:text-4xl md:text-8xl font-bold uppercase"
+          className="relative overflow-hidden text-black font-primary text-[2rem] sm:text-4xl md:text-6xl font-bold uppercase"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"
@@ -85,7 +85,7 @@ export default function Home({
           <div className="relative overflow-hidden">
             <motion.a
               href="#!"
-              className="flex items-center hover:underline mr-4"
+              className="flex items-center hover:underline mr-4 font-secondary"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ delay: 2.4, duration: 0.8, ease: "easeInOut" }}
@@ -97,7 +97,7 @@ export default function Home({
           <div className="relative overflow-hidden">
             <motion.a
               href="#!"
-              className="flex items-center hover:underline mr-4"
+              className="flex items-center hover:underline mr-4 font-secondary"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ delay: 3, duration: 0.8, ease: "easeInOut" }}

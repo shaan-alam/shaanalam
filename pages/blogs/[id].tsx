@@ -21,29 +21,29 @@ const Blog = ({
             alt={blog.title}
             className="mb-8"
           />
-          <h1 className="text-center text-zinc-900 text-2xl sm:text-4xl font-primary font-bold">
+          <h1 className="text-center w-[60%] mx-auto text-black text-xl sm:text-4xl font-secondary font-bold">
             {blog.title}
           </h1>
           <div className="flex items-center justify-center w-full mt-4 text-sm">
-            <div className="text-gray-600 flex items-center mr-3 text-sm">
+            <div className="text-gray-600 flex items-center mr-3 text-sm font-secondary">
               <HiHeart />
               &nbsp;{blog.public_reactions_count}
             </div>
-            <div className="text-gray-600 flex items-center mr-3 text-sm">
+            <div className="text-gray-600 flex items-center mr-3 text-sm font-secondary">
               <HiChat />
               &nbsp;{blog.comments_count}
             </div>
-            <div className="text-gray-600 flex items-center mr-3 text-sm">
+            <div className="text-gray-600 flex items-center mr-3 text-sm font-secondary">
               <HiClock />
               &nbsp;{blog.reading_time_minutes} minutes
             </div>
           </div>
         </div>
-        <p className="text-center text-gray-600 my-4 text-sm">
+        <div className="text-center text-gray-600 my-4 text-sm font-secondary">
           <Moment format="D MMM YYYY" withTitle>
             {blog.published_at}
           </Moment>
-        </p>
+        </div>
         <div className="blog_content">
           {blog?.body_markdown && (
             <ReactMarkdown

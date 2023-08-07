@@ -5,10 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  @apply font-primary;
-}
-
 ::selection {
   @apply bg-zinc-800 text-white;
 }

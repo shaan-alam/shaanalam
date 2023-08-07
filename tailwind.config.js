@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         primary: ['Horizon', 'sans-serif'],
         outlined: ['Horizon_Outline', 'sans-serif'],
+        secondary: ['Inter', 'sans-serif'],
         mono: ['Roboto Mono', 'sans-serif']
       }
     },

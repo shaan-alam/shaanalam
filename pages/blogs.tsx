@@ -11,7 +11,7 @@ const Blogs: React.FC<
   return (
     <Layout>
       <section className="w-[90%] mx-auto">
-        <h1 className="font-primary text-xl sm:text-4xl md:text-8xl font-bold mb-4">
+        <h1 className="font-primary text-xl sm:text-4xl md:text-6xl font-bold mb-4">
           My Articles
         </h1>
         <div className="blogs sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -23,10 +23,10 @@ const Blogs: React.FC<
                 data-scroll-speed="2"
               >
                 <AnimatedImage src={blog.cover_image} className="mb-4" />
-                <h1 className="text-zinc-900 font-bold my-4 hover:underline text-2xl">
+                <h1 className="text-black font-bold my-4 hover:underline">
                   {blog.title}
                 </h1>
-                <p className="text-gray-500 leading-7 text-[0.75em]">
+                <p className="text-gray-500 leading-7 text-[0.75em] font-secondary">
                   {blog.description}
                 </p>
               </div>
