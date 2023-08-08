@@ -39,14 +39,14 @@ export default function Home({
   return (
     <Layout>
       <motion.div
-        className="fixed inset-0 h-screen w-full bg-white dark:bg-black z-[999] scale-y-1 origin-bottom"
+        className="fixed inset-0 md:h-screen w-full bg-white dark:bg-black z-[999] scale-y-1 origin-bottom"
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         transition={{ delay: 1, duration: 1, ease: "easeOut" }}
       ></motion.div>
       <section className="w-[90%] mx-auto pt-28" id="home">
         <h1
-          className="relative overflow-hidden text-black dark:text-white font-primary text-xl sm:text-4xl md:text-7xl font-bold uppercase"
+          className="relative overflow-hidden text-black dark:text-white font-primary text-3xl sm:text-4xl md:text-7xl font-bold uppercase"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"
@@ -60,7 +60,7 @@ export default function Home({
           </motion.div>
         </h1>
         <h1
-          className="relative overflow-hidden text-black dark:text-white font-primary text-xl sm:text-4xl md:text-7xl font-bold uppercase"
+          className="relative overflow-hidden text-black dark:text-white font-primary text-3xl sm:text-4xl md:text-7xl font-bold uppercase"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"

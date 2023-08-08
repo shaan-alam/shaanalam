@@ -14,7 +14,7 @@ const About: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <Layout>
-      <section className="w-[90%] mx-auto">
+      <section className="w-[90%] mx-auto mt-8">
         <h1
           className="tracking-widest text-gray-500 dark:text-gray-300 uppercase font-primary text-center"
           data-scroll
