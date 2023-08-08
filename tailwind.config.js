@@ -13,8 +13,8 @@ module.exports = {
         primary: "#FF004D",
       },
       fontFamily: {
-        primary: ["Horizon", "sans-serif"],
-        outlined: ["Horizon_Outline", "sans-serif"],
+        primary: ["Helvetica", "sans-serif"],
+        bold: ["Helvetica_Bold", "sans-serif"],
         secondary: ["Inter", "sans-serif"],
         mono: ["Roboto Mono", "sans-serif"],
       },

@@ -6,7 +6,7 @@ const Intro = () => {
       <div className="md:w-[70%] w-full leading-7 md:leading-[3rem] md:text-3xl">
         <p
           data-scroll
-          data-scroll-speed="-2"
+          data-scroll-speed="-1"
           data-scroll-direction='horizontal'
           className="font-secondary font-bold text-black dark:text-white"
         >

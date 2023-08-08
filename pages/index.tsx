@@ -44,7 +44,7 @@ export default function Home({
         animate={{ scaleY: 0 }}
         transition={{ delay: 1, duration: 1, ease: "easeOut" }}
       ></motion.div>
-      <section className="w-[90%] mx-auto pt-28 h-screen" id="home">
+      <section className="w-[90%] mx-auto pt-28" id="home">
         <h1
           className="relative overflow-hidden text-black dark:text-white font-primary text-xl sm:text-4xl md:text-7xl font-bold uppercase"
           data-scroll

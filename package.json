@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "framer-motion": "^10.2.3",
+    "graphql-request": "^6.1.0",
     "locomotive-scroll": "^4.1.4",
     "lucide": "^0.263.0",
     "moment": "^2.29.4",

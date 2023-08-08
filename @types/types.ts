@@ -45,3 +45,11 @@ export interface Project {
   title: string;
   githubRepoLink: string;
 }
+
+
+export interface ITools {
+  id: string;
+  logo: {
+    url: string;
+  };
+}
