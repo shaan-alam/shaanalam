@@ -6,6 +6,7 @@ import Writings from "@/containers/Writings";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import axios from "axios";
 import { Blog } from "@/@types/types";
+import Image from "next/image";
 
 const socialVariants = {
   initial: {
@@ -46,7 +47,7 @@ export default function Home({
       ></motion.div>
       <section className="w-[90%] mx-auto pt-28" id="home">
         <h1
-          className="relative overflow-hidden text-black dark:text-white font-primary text-3xl sm:text-4xl md:text-7xl font-bold uppercase"
+          className="relative overflow-hidden text-black dark:text-white font-primary text-3xl sm:text-4xl md:text-7xl font-bold"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"
@@ -56,11 +57,12 @@ export default function Home({
             animate={{ y: 0 }}
             transition={{ delay: 1.5, duration: 0.8, ease: "easeInOut" }}
           >
-            Hi, I am Shaan Alam
+            Hi, I am
+            <span className="text-[#14cf93] ml-2">Shaan Alam</span> 👋
           </motion.div>
         </h1>
         <h1
-          className="relative overflow-hidden text-black dark:text-white font-primary text-3xl sm:text-4xl md:text-7xl font-bold uppercase"
+          className="relative overflow-hidden text-black dark:text-white font-primary text-3xl sm:text-4xl md:text-7xl font-bold"
           data-scroll
           data-scroll-direction="vertical"
           data-scroll-speed="3"
@@ -103,30 +105,23 @@ export default function Home({
             </motion.a>
           </div>
         </div>
-        {/* <motion.div
+        <motion.div
           variants={socialVariants}
           initial="initial"
           animate="animate"
           className="socials mb-12 grid grid-cols-3 w-[200px]"
           data-scroll
           data-scroll-direction="vertical"
-          data-scroll-speed="2"
+          data-scroll-speed="1"
         >
           <motion.a href="#!" variants={socialLinkVariants}>
-            <Image
-              src="/github.svg"
-              height={40}
-              width={40}
-              className="hover:shadow-sm hover:shadow-pink-100 rounded-md"
-              alt="Github Logo"
-            />
+            <Image src="/github.svg" height={40} width={40} alt="Github Logo" />
           </motion.a>
           <motion.a href="#!" variants={socialLinkVariants}>
             <Image
               src="/instagram.svg"
               height={40}
               width={40}
-              className="hover:shadow-sm hover:shadow-pink-100 rounded-md"
               alt="Instagram Logo"
             />
           </motion.a>
@@ -135,11 +130,10 @@ export default function Home({
               src="/twitter.svg"
               height={40}
               width={40}
-              className="hover:shadow-sm hover:shadow-pink-100 rounded-md"
               alt="Twitter Logo"
             />
           </motion.a>
-        </motion.div> */}
+        </motion.div>
       </section>
       <Intro />
       <Writings blogs={blogs} />

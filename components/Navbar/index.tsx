@@ -53,15 +53,15 @@ const Navbar = () => {
             checked={theme === "light"}
             onChange={() => setTheme(theme === "light" ? "dark" : "light")}
             size={120}
-            moonColor="#000"
-            sunColor="#fff"
+            moonColor="#14cf93"
+            sunColor="#14cf93"
           />
         </span>
         <span
           className="cursor-pointer text-black dark:text-white"
           onClick={() => setNavOpen(true)}
         >
-          <HiMenuAlt4 size={30} color={theme == "dark" ? "#000" : "#000"} />
+          <HiMenuAlt4 size={30} color="#14cf93" />
         </span>
       </div>
       <AnimatePresence mode="wait">

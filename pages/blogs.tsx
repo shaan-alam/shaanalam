@@ -11,9 +11,13 @@ const Blogs: React.FC<
   return (
     <Layout>
       <section className="w-[90%] mx-auto">
-        <h1 className="font-primary text-xl sm:text-4xl md:text-6xl font-bold mb-12">
+        <h1 className="font-primary text-xl sm:text-4xl md:text-6xl font-bold mb-4 text-center">
           My Articles
         </h1>
+        <p className="text-center mb-12 font-primary">
+          Welcome to my blogs! Here, I post what I learn about tech to enrich
+          and expand my knowledge horizon.
+        </p>
         <div className="blogs sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {blogs.map((blog) => (
             <Link href={`/blogs/${blog.id}`} key={blog.id}>
