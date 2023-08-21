@@ -53,3 +53,14 @@ export interface ITools {
     url: string;
   };
 }
+
+export interface IProject {
+  title: string;
+  description: string;
+  slug: string;
+  logo: {
+    url: string
+  };
+  githubRepoLink: string;
+  liveLink: string
+}
