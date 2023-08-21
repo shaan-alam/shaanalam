@@ -7,6 +7,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import axios from "axios";
 import { Blog } from "@/@types/types";
 import Image from "next/image";
+import Link from "next/link";
 
 const socialVariants = {
   initial: {
@@ -93,16 +94,17 @@ export default function Home({
             </motion.a>
           </div>
           <div className="relative overflow-hidden">
-            <motion.a
-              href="#!"
-              className="flex items-center hover:underline mr-4 font-secondary text-black dark:text-white"
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ delay: 3, duration: 0.8, ease: "easeInOut" }}
-            >
-              View Projects&nbsp;
-              <HiOutlineArrowNarrowRight />
-            </motion.a>
+            <Link href="/projects">
+              <motion.a
+                className="flex items-center hover:underline mr-4 font-secondary text-black dark:text-white"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ delay: 3, duration: 0.8, ease: "easeInOut" }}
+              >
+                View Projects&nbsp;
+                <HiOutlineArrowNarrowRight />
+              </motion.a>
+            </Link>
           </div>
         </div>
         <motion.div
@@ -114,10 +116,20 @@ export default function Home({
           data-scroll-direction="vertical"
           data-scroll-speed="1"
         >
-          <motion.a href="#!" variants={socialLinkVariants}>
+          <motion.a
+            href="https://github.com/shaan-alam"
+            target="_blank"
+            rel="noreferrer"
+            variants={socialLinkVariants}
+          >
             <Image src="/github.svg" height={40} width={40} alt="Github Logo" />
           </motion.a>
-          <motion.a href="#!" variants={socialLinkVariants}>
+          <motion.a
+            href="https://instagram.com/shaancodes"
+            target="_blank"
+            rel="noreferrer"
+            variants={socialLinkVariants}
+          >
             <Image
               src="/instagram.svg"
               height={40}
@@ -125,7 +137,12 @@ export default function Home({
               alt="Instagram Logo"
             />
           </motion.a>
-          <motion.a href="#!" variants={socialLinkVariants}>
+          <motion.a
+            href="https://twitter.com/shaancodes"
+            target="_blank"
+            rel="noreferrer"
+            variants={socialLinkVariants}
+          >
             <Image
               src="/twitter.svg"
               height={40}
